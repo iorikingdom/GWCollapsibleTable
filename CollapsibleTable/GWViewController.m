@@ -75,14 +75,18 @@
 
 - (void)tableView:(UITableView *)tableView willCollapseSection:(NSInteger)section
 {
-	[tableView headerCellForHeaderSection:section].textLabel.text = @"Collapsed Section";
-	[tableView headerCellForHeaderSection:section].accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"UITableCollapsed"]];
+    GWCollapsibleTable *collapsibleTable = (GWCollapsibleTable *)tableView;
+
+	[collapsibleTable headerCellForHeaderSection:section].textLabel.text = @"Collapsed Section";
+	[collapsibleTable headerCellForHeaderSection:section].accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"UITableCollapsed"]];
 }
 
 - (void)tableView:(UITableView *)tableView willExpandSection:(NSInteger)section
 {
-	[tableView headerCellForHeaderSection:section].textLabel.text = @"Expanded Section";
-	[tableView headerCellForHeaderSection:section].accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"UITableExpanded"]];
+    GWCollapsibleTable *collapsibleTable = (GWCollapsibleTable *)tableView;
+
+	[collapsibleTable headerCellForHeaderSection:section].textLabel.text = @"Expanded Section";
+	[collapsibleTable headerCellForHeaderSection:section].accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"UITableExpanded"]];
 }
 
 @end

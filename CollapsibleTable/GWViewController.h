@@ -10,6 +10,6 @@
 
 @interface GWViewController : UIViewController <GWCollapsibleTableDelegate, GWCollapsibleTableDataSource>
 
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet GWCollapsibleTable *tableView;
 
 @end

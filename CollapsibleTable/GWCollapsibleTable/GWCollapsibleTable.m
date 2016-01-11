@@ -14,14 +14,14 @@
 static NSString * const GWExpandedSectionsSet = @"GWExpendedSectionsSet";
 
 
-@interface UITableView ()
+@interface GWCollapsibleTable ()
 
 @property (nonatomic, strong) NSMutableIndexSet *mutableExpandedSections;
 
 @end
 
 
-@implementation UITableView (GWCollapsibleTable)
+@implementation GWCollapsibleTable
 
 #pragma mark - Collapsing & Expanding Section
 

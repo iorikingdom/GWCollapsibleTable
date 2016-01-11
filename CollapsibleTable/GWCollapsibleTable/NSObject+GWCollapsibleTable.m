@@ -16,7 +16,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	id<GWCollapsibleTableDataSource> dataSource = [tableView collapsibleTableDataSource];
+    GWCollapsibleTable *collapsibleTable = (GWCollapsibleTable *)tableView;
+	id<GWCollapsibleTableDataSource> dataSource = [collapsibleTable collapsibleTableDataSource];
 	if ([dataSource tableView:tableView canCollapseSection:indexPath.section]) {
 		if (indexPath.row == 0) {
 			return [dataSource tableView:tableView headerCellForCollapsibleSection:indexPath.section];
@@ -28,9 +29,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	id<GWCollapsibleTableDataSource> dataSource = [tableView collapsibleTableDataSource];
+    GWCollapsibleTable *collapsibleTable = (GWCollapsibleTable *)tableView;
+
+	id<GWCollapsibleTableDataSource> dataSource = [collapsibleTable collapsibleTableDataSource];
 	if ([dataSource tableView:tableView canCollapseSection:section]) {
-		if (![tableView.expandedSections containsIndex:section]) {
+		if (![collapsibleTable.expandedSections containsIndex:section]) {
 			return 1;
 		}
 		return [dataSource tableView:tableView numberOfBodyRowsInSection:section] + 1;
@@ -42,11 +45,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	id<GWCollapsibleTableDataSource> dataSource = [tableView collapsibleTableDataSource];
-	id<GWCollapsibleTableDelegate> delegate = [tableView collapsibleTableDelegate];
+    GWCollapsibleTable *collapsibleTable = (GWCollapsibleTable *)tableView;
+
+	id<GWCollapsibleTableDataSource> dataSource = [collapsibleTable collapsibleTableDataSource];
+	id<GWCollapsibleTableDelegate> delegate = [collapsibleTable collapsibleTableDelegate];
 	if ([dataSource tableView:tableView canCollapseSection:indexPath.section]) {
 		if (indexPath.row == 0) {
-			[tableView toggleSection:indexPath.section];
+			[collapsibleTable toggleSection:indexPath.section];
 		}
 		else {
 			[delegate tableView:tableView didSelectBodyRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row - 1 inSection:indexPath.section]];
