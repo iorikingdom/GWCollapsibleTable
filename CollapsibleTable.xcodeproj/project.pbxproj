@@ -43,7 +43,6 @@
 		2504F023169640B200D3D1A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		2504F025169640B200D3D1A3 /* GWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GWViewController.h; sourceTree = "<group>"; };
 		2504F026169640B200D3D1A3 /* GWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GWViewController.m; sourceTree = "<group>"; };
-		2504F02E1696411200D3D1A3 /* GWCollapsibleTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GWCollapsibleTable.h; sourceTree = "<group>"; };
 		2504F0331696423E00D3D1A3 /* NSObject+GWCollapsibleTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GWCollapsibleTable.h"; sourceTree = "<group>"; };
 		2504F0341696423E00D3D1A3 /* NSObject+GWCollapsibleTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GWCollapsibleTable.m"; sourceTree = "<group>"; };
 		2504F03B1697584800D3D1A3 /* GWCollapsibleTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWCollapsibleTable.h; sourceTree = "<group>"; };
@@ -130,7 +129,6 @@
 		2504F02D169640BE00D3D1A3 /* GWCollapsibleTable */ = {
 			isa = PBXGroup;
 			children = (
-				2504F02E1696411200D3D1A3 /* GWCollapsibleTable.h */,
 				2504F0331696423E00D3D1A3 /* NSObject+GWCollapsibleTable.h */,
 				2504F0341696423E00D3D1A3 /* NSObject+GWCollapsibleTable.m */,
 				2504F03B1697584800D3D1A3 /* GWCollapsibleTable.h */,

@@ -7,7 +7,6 @@
 //
 
 #import "NSObject+GWCollapsibleTable.h"
-#import "UITableView+GWCollapsibleTable.h"
 
 @protocol GWCollapsibleTableDataSource <NSObject>
 
@@ -31,5 +30,40 @@
 // TODO: Support Extra Selection Management Methods
 
 // TODO: Support Editing & Reordering Methods
+
+@end
+
+
+@interface GWCollapsibleTable:UITableView
+
+@property (nonatomic, strong, readonly) NSIndexSet *expandedSections;
+@property (nonatomic, strong, readonly) id<GWCollapsibleTableDataSource> collapsibleTableDataSource;
+@property (nonatomic, strong, readonly) id<GWCollapsibleTableDelegate> collapsibleTableDelegate;
+
+- (void)toggleSection:(NSInteger)section;
+
+- (UITableViewCell *)headerCellForHeaderSection:(NSInteger)section;
+- (UITableViewCell *)bodyCellForBodyRowAtIndexPath:(NSIndexPath *)indexPath;
+
+- (void)selectHeaderSection:(NSInteger)section
+                   animated:(BOOL)animated
+             scrollPosition:(UITableViewScrollPosition)scrollPosition;
+- (void)deselectHeaderSection:(NSInteger)section
+                     animated:(BOOL)animated;
+
+- (void)selectBodyRowAtIndexPath:(NSIndexPath *)indexPath
+                        animated:(BOOL)animated
+                  scrollPosition:(UITableViewScrollPosition)scrollPosition;
+- (void)selectBodyRowAtIndexPath:(NSIndexPath *)indexPath
+                        animated:(BOOL)animated
+                  scrollPosition:(UITableViewScrollPosition)scrollPosition
+autoExpandingSectionCallDelegate:(BOOL)callDelegate;
+- (void)deselectBodyRowAtIndexPath:(NSIndexPath *)indexPath
+                          animated:(BOOL)animated;
+
+- (void)insertHeaderSections:(NSIndexSet *)sections
+            withRowAnimation:(UITableViewRowAnimation)animation;
+- (void)deleteHeaderSections:(NSIndexSet *)sections
+            withRowAnimation:(UITableViewRowAnimation)animation;
 
 @end
