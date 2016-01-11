@@ -7,7 +7,7 @@
 //
 
 #import "NSObject+GWCollapsibleTable.h"
-#import "UITableView+GWCollapsibleTable.h"
+#import "GWCollapsibleTable.h"
 
 @protocol GWCollapsibleTableDataSource <NSObject>
 
