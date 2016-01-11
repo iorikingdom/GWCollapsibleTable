@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 Greg Wang. All rights reserved.
 //
 
-#import "UITableView+GWCollapsibleTable.h"
+//#import "UITableView+GWCollapsibleTable.h"
 #import "GWCollapsibleTable.h"
 #import "objc/runtime.h"
 
